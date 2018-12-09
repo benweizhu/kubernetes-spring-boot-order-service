@@ -1,9 +1,11 @@
 # kubernetes-spring-cloud-order-service
 
+### Run
 ```bash
 ./gradlew bootRun
 ```
 
+### build, tag and push
 ```bash
 ./gradlew clean build
 ```
@@ -31,4 +33,18 @@ docker push $DOCKER_ID_USER/kubernetes-spring-cloud-order-service
 
 ```bash
 docker pull $DOCKER_ID_USER/kubernetes-spring-cloud-order-service
+```
+
+### kubernetes
+
+```bash
+kubectl create -f ./kubenetes/pods/service.yml --namespace=spring-cloud-example
+```
+
+```bash
+kubectl get pod spring-cloud-order-service --namespace=spring-cloud-example
+```
+
+```bash
+kubectl delete pod spring-cloud-order-service --namespace=spring-cloud-example
 ```
