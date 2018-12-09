@@ -1,8 +1,4 @@
-# kubernetes-spring-cloud-example
-
-https://github.com/benweizhu/kubernetes-spring-cloud-example
-
-## kubernetes-spring-cloud-order-service
+# kubernetes-spring-cloud-order-service
 
 ### Run
 ```bash
@@ -48,3 +44,6 @@ kubectl apply -f ./kubenetes/deployment.yml
 ```bash
 kubectl apply -f ./kubenetes/service.yml
 ```
+
+### reference
+https://github.com/benweizhu/kubernetes-spring-cloud-example
