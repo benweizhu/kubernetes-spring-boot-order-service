@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-cloud-order-service-deployment
+  labels:
+    app: spring-cloud-order-service
+  namespace: spring-cloud-example
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: spring-cloud-order-service
+  template:
+    metadata:
+      labels:
+        app: spring-cloud-order-service
+    spec:
+      containers:
+      - name: spring-cloud-order-service-container
+        image: benweizhu/kubernetes-spring-cloud-order-service
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "1"
+          requests:
+            memory: "128Mi"
+            cpu: "0.5"

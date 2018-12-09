@@ -38,13 +38,5 @@ docker pull $DOCKER_ID_USER/kubernetes-spring-cloud-order-service
 ### kubernetes
 
 ```bash
-kubectl create -f ./kubenetes/pods/app.yml --namespace=spring-cloud-example
-```
-
-```bash
-kubectl get pod spring-cloud-order-service-pod --namespace=spring-cloud-example
-```
-
-```bash
-kubectl delete pod spring-cloud-order-service --namespace=spring-cloud-example
+kubectl apply -f ./kubenetes/deployment/app.yml
 ```
