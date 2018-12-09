@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: spring-cloud-order-service-service
+  labels:
+    app: spring-cloud-order-service
+  namespace: spring-cloud-example
+spec:
+  selector:
+    app: spring-cloud-order-service
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
