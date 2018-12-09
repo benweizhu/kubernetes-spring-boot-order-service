@@ -1,4 +1,8 @@
-# kubernetes-spring-cloud-order-service
+# kubernetes-spring-cloud-example
+
+https://github.com/benweizhu/kubernetes-spring-cloud-example
+
+## kubernetes-spring-cloud-order-service
 
 ### Run
 ```bash
