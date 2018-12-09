@@ -8,6 +8,5 @@ import lombok.Setter;
 @Getter
 @Builder
 public class Order {
-    private long id;
-    private Price totalPrice;
+  private Price totalPrice;
 }
