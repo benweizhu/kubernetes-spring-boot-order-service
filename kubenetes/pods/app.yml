@@ -1,11 +1,13 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: spring-cloud-order-service
+  name: spring-cloud-order-service-pod
+  labels:
+    app: spring-cloud-order-service
   namespace: spring-cloud-example
 spec:
   containers:
-  - name: spring-cloud-order-service
+  - name: spring-cloud-order-service-container
     image: benweizhu/kubernetes-spring-cloud-order-service
     resources:
       limits:

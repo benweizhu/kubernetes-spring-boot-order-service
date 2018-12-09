@@ -38,11 +38,11 @@ docker pull $DOCKER_ID_USER/kubernetes-spring-cloud-order-service
 ### kubernetes
 
 ```bash
-kubectl create -f ./kubenetes/pods/service.yml --namespace=spring-cloud-example
+kubectl create -f ./kubenetes/pods/app.yml --namespace=spring-cloud-example
 ```
 
 ```bash
-kubectl get pod spring-cloud-order-service --namespace=spring-cloud-example
+kubectl get pod spring-cloud-order-service-pod --namespace=spring-cloud-example
 ```
 
 ```bash
