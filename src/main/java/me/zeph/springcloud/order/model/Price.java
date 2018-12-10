@@ -1,11 +1,9 @@
 package me.zeph.springcloud.order.model;
 
 import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Setter
-@Getter
+@Data
 @Builder
 public class Price {
   private double amount;

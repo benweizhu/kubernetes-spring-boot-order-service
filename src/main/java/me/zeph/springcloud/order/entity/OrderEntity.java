@@ -1,19 +1,16 @@
 package me.zeph.springcloud.order.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import me.zeph.springcloud.order.model.Unit;
 
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name = "ORDERS")
-@Getter
-@Setter
 public class OrderEntity {
 
-  @Id
-  private long id;
+  @Id private long id;
 
   @Column(name = "PRICE_AMOUNT")
   private double amount;
