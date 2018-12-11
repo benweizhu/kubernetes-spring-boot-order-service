@@ -38,11 +38,9 @@ docker pull $DOCKER_ID_USER/kubernetes-spring-cloud-order-service
 ### kubernetes
 
 ```bash
-kubectl apply -f ./kubenetes/deployment.yml
-```
+kubectl apply -f ./kubernetes/application.yml
 
-```bash
-kubectl apply -f ./kubenetes/service.yml
+kubectl delete -f ./kubernetes/application.yml
 ```
 
 ### reference
