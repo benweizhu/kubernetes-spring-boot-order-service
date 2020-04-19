@@ -37,19 +37,27 @@ docker pull $DOCKER_ID_USER/kubernetes-spring-cloud-order-service
 
 ### kubernetes
 
+```
+kubectl create deployment spring-cloud-order-service --image=benweizhu/kubernetes-spring-cloud-order-service --dry-run -o=yaml > deployment.yaml
+
+kubectl create service clusterip spring-cloud-order-service --tcp=8080:8080 --dry-run -o=yaml >> deployment.yaml
+
+remember add '---' between two configuation to make yaml valid
+```
 
 ```
-kubectl create deployment demo --image=springguides/demo --dry-run -o=yaml > deployment.yaml
+kubectl apply -f deployment.yaml
 
-echo --- >> deployment.yaml
-
-kubectl create service clusterip demo --tcp=8080:8080 --dry-run -o=yaml >> deployment.yaml
+## deployment.apps/spring-cloud-order-service created
+## service/spring-cloud-order-service created
 ```
 
-```bash
-kubectl apply -f ./kubernetes/application.yml
+```
+kubectl port-forward svc/demo 8080:8080
+```
 
-kubectl delete -f ./kubernetes/application.yml
+```
+curl localhost:8080/actuator/health
 ```
 
 ### reference

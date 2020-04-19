@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: spring-cloud-order-service
+  name: spring-cloud-order-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-cloud-order-service
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: spring-cloud-order-service
+    spec:
+      containers:
+      - image: benweizhu/kubernetes-spring-cloud-order-service
+        name: kubernetes-spring-cloud-order-service
+        resources: {}
+status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: spring-cloud-order-service
+  name: spring-cloud-order-service
+spec:
+  ports:
+  - name: 8080-8080
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: spring-cloud-order-service
+  type: ClusterIP
+status:
+  loadBalancer: {}
