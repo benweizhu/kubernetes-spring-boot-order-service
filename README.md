@@ -22,9 +22,10 @@ docker run -p 8080:8080 kubernetes-spring-cloud-order-service
 export DOCKER_ID_USER="benweizhu" ## put your docker-hub username
 ```
 
-
 ```bash
-docker tag kubernetes-spring-cloud-order-service $DOCKER_ID_USER/kubernetes-spring-cloud-order-service
+docker tag kubernetes-spring-cloud-order-service $DOCKER_ID_USER/kubernetes-spring-cloud-order-service:6504cab5
+
+You may want to tag it with git commit hash
 ```
 
 ```bash

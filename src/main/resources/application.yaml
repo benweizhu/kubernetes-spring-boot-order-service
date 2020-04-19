@@ -1,2 +1,3 @@
-order:
-  signature: Benwei
+spring:
+  application:
+    name: spring-cloud-order-service
