@@ -40,7 +40,11 @@ docker pull $DOCKER_ID_USER/kubernetes-spring-cloud-order-service
 ```
 kubectl create deployment spring-cloud-order-service --image=benweizhu/kubernetes-spring-cloud-order-service --dry-run -o=yaml > deployment.yaml
 
+//ClusterIP Type
 kubectl create service clusterip spring-cloud-order-service --tcp=8080:8080 --dry-run -o=yaml >> deployment.yaml
+
+//LoadBalancer Type
+kubectl create service loadbalancer spring-cloud-order-service --tcp=8080:8080 --dry-run -o=yaml >> deployment.yaml
 
 remember add '---' between two configuation to make yaml valid
 ```
@@ -53,6 +57,7 @@ kubectl apply -f deployment.yaml
 ```
 
 ```
+// if serive is ClusterIP Type
 kubectl port-forward svc/demo 8080:8080
 ```
 

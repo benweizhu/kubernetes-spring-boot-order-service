@@ -39,6 +39,6 @@ spec:
     targetPort: 8080
   selector:
     app: spring-cloud-order-service
-  type: ClusterIP
+  type: LoadBalancer
 status:
   loadBalancer: {}

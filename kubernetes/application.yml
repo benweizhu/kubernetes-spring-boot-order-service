@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-cloud-order-service-service
+  labels:
+    app: spring-cloud-order-service
+  namespace: spring-cloud-example
+spec:
+  selector:
+    app: spring-cloud-order-service
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-cloud-order-service-deployment
+  labels:
+    app: spring-cloud-order-service
+  namespace: spring-cloud-example
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: spring-cloud-order-service
+  template:
+    metadata:
+      labels:
+        app: spring-cloud-order-service
+    spec:
+      containers:
+      - name: spring-cloud-order-service-container
+        image: benweizhu/kubernetes-spring-cloud-order-service
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "1"
+          requests:
+            memory: "128Mi"
+            cpu: "0.5"
