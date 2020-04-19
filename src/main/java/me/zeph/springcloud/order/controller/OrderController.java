@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class OrderController {
 
-  @Autowired private OrderService orderService;
+  @Autowired
+  private OrderService orderService;
 
   @GetMapping("/orders/{orderId}")
   public Order getOrder(@PathVariable(name = "orderId") long orderId) {

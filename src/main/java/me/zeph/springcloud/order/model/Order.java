@@ -6,5 +6,5 @@ import lombok.Data;
 @Data
 @Builder
 public class Order {
-  private Price totalPrice;
+  private long id;
 }
