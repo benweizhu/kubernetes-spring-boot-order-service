@@ -7,4 +7,5 @@ import lombok.Data;
 @Builder
 public class Order {
   private long id;
+  private String signature;
 }

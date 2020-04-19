@@ -40,20 +40,24 @@ docker pull $DOCKER_ID_USER/kubernetes-spring-cloud-order-service
 ```
 kubectl create deployment spring-cloud-order-service --image=benweizhu/kubernetes-spring-cloud-order-service --dry-run -o=yaml > deployment.yaml
 
-//ClusterIP Type
-kubectl create service clusterip spring-cloud-order-service --tcp=8080:8080 --dry-run -o=yaml >> deployment.yaml
+//ClusterIP Type service
+kubectl create service clusterip spring-cloud-order-service --tcp=8080:8080 --dry-run -o=yaml >> service.yaml
 
-//LoadBalancer Type
-kubectl create service loadbalancer spring-cloud-order-service --tcp=8080:8080 --dry-run -o=yaml >> deployment.yaml
+//LoadBalancer Type service
+kubectl create service loadbalancer spring-cloud-order-service --tcp=8080:8080 --dry-run -o=yaml >> service.yaml
 
-remember add '---' between two configuation to make yaml valid
+kubectl create configmap spring-cloud-order-service --from-file=src/main/resources/application.yaml --dry-run -o=yaml > config-map.yaml
 ```
 
 ```
 kubectl apply -f deployment.yaml
-
 ## deployment.apps/spring-cloud-order-service created
+
+kubectl apply -f service.yaml
 ## service/spring-cloud-order-service created
+
+kubectl apply -f config-map.yaml
+## configmap/spring-cloud-order-service created
 ```
 
 ```
